@@ -1,0 +1,99 @@
+fid,RC_ID,RC_Name,Classification,Country,RegionNM,Rank,x_coord,y_coord
+470,RC_EW_403,White Rose Centre; Leeds (Yorkshire and The Humber; England),Out of Town Shopping Centres,England,Yorkshire and The Humber,8,428183.127,429146.796
+490,RC_EW_416,Queen Street; City; Leeds (Yorkshire and The Humber; England),District Centre,England,Yorkshire and The Humber,3,426383.397,427685.845
+772,RC_EW_779,Otley; Leeds (Yorkshire and The Humber; England),District Centre,England,Yorkshire and The Humber,3,420199.827,445420.948
+773,RC_EW_792,Roundhay Road; Harehills Corner; Leeds (Yorkshire and The Humber; England),District Centre,England,Yorkshire and The Humber,3,431985.855,435735.878
+774,RC_EW_793,Harehills Lane; Harehills; Leeds (Yorkshire and The Humber; England),Local Centre,England,Yorkshire and The Humber,5,432303.086,434994.916
+776,RC_EW_804,Station Road; Cross Gates; Leeds (Yorkshire and The Humber; England),District Centre,England,Yorkshire and The Humber,3,436210.541,434641.494
+777,RC_EW_819,"Leeds City, Leeds (Yorkshire and The Humber; England)",Regional Centre,England,Yorkshire and The Humber,1,430199.074,433614.638
+779,RC_EW_837,Otley Road; Headingley; Leeds (Yorkshire and The Humber; England),Local Centre,England,Yorkshire and The Humber,5,427833.446,436194.148
+786,RC_EW_911,Lowtown; Pudsey; Leeds (Yorkshire and The Humber; England),Local Centre,England,Yorkshire and The Humber,5,422342.775,433400.196
+788,RC_EW_923,Wetherby; Leeds (Yorkshire and The Humber; England),Market Town,England,Yorkshire and The Humber,9,440423.072,448200.787
+3139,RC_EW_405,Dewsbury Road; Beeston Park Side; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,428969.973,429850.485
+3150,RC_EW_406,Dewsbury Road; Hunslet; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,430093.909,431152.614
+3161,RC_EW_407,Beeston Road; Beeston Hill; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,428948.506,431088.563
+3272,RC_EW_417,Queen Street; Morley; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,426363.411,428163.066
+3331,RC_EW_825,Tong Road; Upper Wortley; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,426734.003,433076.67
+3418,RC_EW_903,High Street; Yeadon; Leeds (Yorkshire and The Humber; England),Local Centre,England,Yorkshire and The Humber,5,420937.362,441107.826
+3431,RC_EW_915,New Road Side; Low Fold; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,423616.683,437374.984
+3820,RC_EW_368,Commercial Street; Rothwell; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,434498.596,428128.563
+3876,RC_EW_373,High Street; Kippax; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,441720.363,430204.601
+3887,RC_EW_374,Main Street; Garforth; Leeds (Yorkshire and The Humber; England),Local Centre,England,Yorkshire and The Humber,5,440415.143,433306.02
+4197,RC_EW_402,Middleton Park Circus; Middleton; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,429935.512,428074.103
+4219,RC_EW_404,The Penny Hill Centre; Leeds (Yorkshire and The Humber; England),Retail Park,England,Yorkshire and The Humber,7,431060.83,431515.297
+4378,RC_EW_786,Easterly Road; Gipton Wood; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,432834.384,435999.332
+4384,RC_EW_791,Harrogate Road; Moortown; Leeds (Yorkshire and The Humber; England) - 1,Small Local Centre,England,Yorkshire and The Humber,6,430715.056,439119.927
+4385,RC_EW_419,Lower Wortley Road; New Blackpool; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,426378.518,431961.088
+4390,RC_EW_797,Chapeltown Road; Potternewton; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,430895.508,435616.161
+4397,RC_EW_802,Killingbeck Retail Park; Leeds (Yorkshire and The Humber; England),Retail Park,England,Yorkshire and The Humber,7,434483.12,434558.622
+4400,RC_EW_805,Colton Mill Retail Park; Leeds (Yorkshire and The Humber; England),Retail Park,England,Yorkshire and The Humber,7,437366.202,433230.146
+4413,RC_EW_817,Great George Street; Leeds; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,429632.849,433941.741
+4436,RC_EW_838,Otley Road; Far Headingley; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,427605.526,436835.796
+4441,RC_EW_842,Pendas Way; Manston; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,437004.647,435047.429
+4511,RC_EW_905,Oxford Road; Guiseley; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,419328.422,442199.149
+4514,RC_EW_908,Town Street; Stanningley; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,422375.791,434510.512
+4521,RC_EW_914,Owlcotes Centre; Leeds (Yorkshire and The Humber; England),Retail Park,England,Yorkshire and The Humber,7,421665.042,434154.131
+5137,RC_EW_813,Woodsley Road; Burley; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,428508.873,434491.854
+5138,RC_EW_814,Kirkstall Road; Burley; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,427602.799,434552.544
+5143,RC_EW_818,Wellington Street; Granary Wharf; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,429581.211,433425.767
+5149,RC_EW_824,Neville Street; Granary Wharf; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,429888.178,433128.674
+5245,RC_EW_910,Stanningley Road; Bramley; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,424005.852,434488.153
+5466,RC_EW_783,Dib Lane; Hollin Park; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,433890.564,436447.086
+5468,RC_EW_785,Roundhay Road; Oakwood; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,432423.129,436572.986
+5472,RC_EW_789,Moor Allerton Centre; Moor Allerton; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,429511.639,438789.984
+5474,RC_EW_790,Harrogate Road; Moortown; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,430757.028,438760.471
+5480,RC_EW_796,Harrogate Road; Potternewton; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,430717.008,436745.107
+5488,RC_EW_803,York Road; Brianside; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,435921.955,435465.218
+5491,RC_EW_806,Harehills Lane; Osmondthorpe; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,433012.88,434144.738
+5492,RC_EW_807,Northside Retail Park; Leeds (Yorkshire and The Humber; England),Retail Park,England,Yorkshire and The Humber,7,428708.251,437002.399
+5493,RC_EW_808,Otley Road; West Park; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,426890.853,437523.311
+5501,RC_EW_815,Raglan Road; Woodhouse; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,429349.567,435020.157
+5502,RC_EW_816,Woodhouse Lane; Bagby Fields; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,429604.765,434730.201
+5507,RC_EW_820,Cardigan Road; Burley; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,427987.447,435156.595
+5510,RC_EW_823,Beeston Road; Beeston Hill; Leeds (Yorkshire and The Humber; England) - 1,Small Local Centre,England,Yorkshire and The Humber,6,429485.022,431374.718
+5513,RC_EW_826,Town Street; Carr Crofts; Leeds (Yorkshire and The Humber; England),Local Centre,England,Yorkshire and The Humber,5,427099.907,433527.512
+5514,RC_EW_827,Copley Hill Way; New Wortley; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,428380.143,432578.319
+5516,RC_EW_829,The Crescent; Hyde Park; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,428929.756,435483.217
+5519,RC_EW_831,Cherry Row; Sheepscar; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,430974.016,434527.132
+5521,RC_EW_833,Roundhay Road; Sheepscar; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,431368.636,435049.714
+5522,RC_EW_834,Roundhay Road; Sheepscar; Leeds (Yorkshire and The Humber; England) - 1,Small Local Centre,England,Yorkshire and The Humber,6,431545.007,435165.441
+5524,RC_EW_836,Abbey Retail Park; Leeds (Yorkshire and The Humber; England),Retail Park,England,Yorkshire and The Humber,7,426200.191,435535.618
+5529,RC_EW_840,Seacroft Green Shopping Centre; Leeds (Yorkshire and The Humber; England),Retail Park,England,Yorkshire and The Humber,7,435661.774,436336.559
+5603,RC_EW_907,Bradford Road; Tranmere Park; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,418193.475,442427.944
+5604,RC_EW_5945,Templar Lane; The Leylands; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,430571.857,433804.36
+5609,RC_EW_912,Chapeltown; Windmill Hill; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,421810.02,432953.346
+5611,RC_EW_913,Richardshaw Lane; Stanningley; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,422013.417,434321.077
+5616,RC_EW_919,Bramley Shopping Centre; Leeds (Yorkshire and The Humber; England),Retail Park,England,Yorkshire and The Humber,7,424699.096,435115.896
+5860,RC_EW_811,King Lane; Black Moor; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,428863.987,440145.077
+5871,RC_EW_821,Crown Point Shopping Park; Leeds (Yorkshire and The Humber; England),Retail Park,England,Yorkshire and The Humber,7,430382.48,432546.803
+5890,RC_EW_839,Seacroft Crescent; The Green; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,435618.448,436114.137
+5965,RC_EW_5944,Hunslet Lane; Steander; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,430323.027,432994.83
+5967,RC_EW_5946,Thorpe Park Approach; Brown Moor; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,437648.463,433275.543
+5976,RC_EW_916,New Road Side; Low Fold; Leeds (Yorkshire and The Humber; England) - 1,Small Local Centre,England,Yorkshire and The Humber,6,423297.38,437493.69
+6069,RC_EW_781,Street Lane; Park Villas; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,432388.248,438786.677
+6084,RC_EW_795,Harehills Road; Harehills; Leeds (Yorkshire and The Humber; England) - 1,Small Local Centre,England,Yorkshire and The Humber,6,431884.981,435145.409
+6087,RC_EW_798,Selby Road; Halton; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,434953.69,433436.061
+6088,RC_EW_799,Church Street; Atkinson Hill; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,431327.587,431774.682
+6104,RC_EW_812,Cranmer Bank; Camp Town; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,429207.393,439118.879
+6107,RC_EW_924,Elizabeth Court; Collingham; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,438756.375,445901.002
+6121,RC_EW_828,Woodhouse Street; Woodhouse Carr; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,429470.11,435414.166
+6136,RC_EW_841,Thorpe Park View; Brown Moor; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,438051.491,433911.563
+6180,RC_EW_917,Town Street; Horsforth; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,423664.198,437934.125
+6191,RC_EW_782,Windsor Court; Moortown; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,431059.987,438762.798
+6204,RC_EW_794,Harehills Road; Harehills; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,431898.221,434926.858
+6206,RC_EW_904,Guiseley Retail Park; Leeds (Yorkshire and The Humber; England),Retail Park,England,Yorkshire and The Humber,7,419085.712,441877.902
+6208,RC_EW_906,Harrogate Road; Rawdon; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,420842.85,439703.837
+6213,RC_EW_801,York Road; The Oval; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,435103.365,434772.379
+6221,RC_EW_809,Station Road; Troy; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,424236,438967.217
+6223,RC_EW_810,Butcher Hill; West Park; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,426172.534,437491.107
+6236,RC_EW_822,Domestic Street; Holbeck; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,429069.124,432246.327
+6246,RC_EW_830,Brudenell Grove; Hyde Park; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,428577.313,435152.836
+6248,RC_EW_832,Lincoln Green Road; New Town; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,431295.9,434138.809
+6252,RC_EW_727,High Street; Boston Spa; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,442978.455,445647.82
+6262,RC_EW_918,Town Street; Horsforth; Leeds (Yorkshire and The Humber; England) - 1,Small Local Centre,England,Yorkshire and The Humber,6,423888.787,438186.331
+6295,RC_EW_800,York Road; Richmond Hill; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,432051.566,433575.25
+6315,RC_EW_784,Easterly Road; Oakwood; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,433256.462,436191.86
+6332,RC_EW_909,Town Street; Farsley; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,421736.704,435183.773
+6372,RC_EW_835,Meanwood Road; Woodhouse Carr; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,430267.727,435086.443
+6387,RC_EW_788,Queen Victoria Street; Chapel Allerton; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,430506.54,437326.657
+6400,RC_EW_787,Harrogate Road; Chapel Allerton; Leeds (Yorkshire and The Humber; England),Small Local Centre,England,Yorkshire and The Humber,6,430501.054,437064.825
