@@ -139,9 +139,97 @@ colnames(flows_matrix) <- destination_shp@data$RC_ID
 rownames(flows_matrix) <- origin_shp@data$LSOA11CD
 flows_matrix <- format(flows_matrix, digits = 2)
 # C. Plots?? ----
+# Converting flows matrix to long format to be able to plot it as flows
 for_long_format <- flows_matrix
 for_long_format$lsoa_id <- origin_shp@data$LSOA11CD
-dist_pair <- melt(for_long_format)
-dist_pair <- melt(for_long_format,
+
+flows_long <- melt(for_long_format,
                   id.vars="lsoa_id")
+
+# Understanding how the flowlines creation works
+# od_data <- stplanr::flow[1:20, ]
+# l <- od2line(flow = od_data, zones = cents_sf)
+# plot(sf::st_geometry(cents_sf))
+# plot(l, lwd = l$All / mean(l$All), add = TRUE)
+# l <- od2line(flow = od_data, zones = cents)
+# # When destinations are different
+# head(destinations[1:5])
+# od_data2 <- flow_dests[1:12, 1:3]
+# od_data2
+# flowlines_dests <- od2line(od_data2, cents_sf, destinations = destinations_sf)
+# flowlines_dests
+# plot(flowlines_dests)
+
+
+# converting to sf object in order to run od2linw (from stplanr package)
+# https://gis.stackexchange.com/questions/222978/lon-lat-to-simple-features-sfg-and-sfc-in-r
+library(data.table)
+library(sf)
+
+origin_dt <- data.table(
+  ID=origin_shp@data$LSOA11CD,
+  lon=origin_shp@data$X_COORD,
+  lat=origin_shp@data$Y_COORD
+)
+origin_sf = st_as_sf(origin_dt, coords = c("lon", "lat"), 
+                 crs = 27700, agr = "constant")
+plot(origin_sf)
+
+destination_dt <- data.table(
+  ID=destination_shp@data$RC_ID,
+  lon=destination_shp@data$x_coord,
+  lat=destination_shp@data$y_coord
+)
+destination_sf = st_as_sf(destination_dt, coords = c("lon", "lat"), 
+                     crs = 27700, agr = "constant")
+plot(destination_sf)
+
+flow_lines <- od2line(flows_long, origin_sf, destinations = destination_sf)
+plot(flow_lines)  # it plots the 3 graphs...
+
+# Convert sf object to sp object in order to export it as shp
+# https://gis.stackexchange.com/questions/239118/r-convert-sf-object-back-to-spatialpolygonsdataframe
+flowlines_sp <- sf:::as_Spatial(flow_lines)
+plot(flowlines_sp)
+
+flowlines_sp@data$value <- as.integer(flowlines_sp@data$value) # adding this line to avoid the error:
+# Error in writeOGR(obj = flowlines_sp, dsn = data_path, layer = "flow_lines",  : 
+#                     Can't convert columns of class: AsIs; column names: value
+writeOGR(obj = flowlines_sp,
+         dsn = data_path,
+         layer = "flow_lines",
+         driver = "ESRI Shapefile") # exporting shp
+
+# trying to plot in leaflet
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%
+  addPolygons(data = flow_lines)
+# gives projection error
+# epsg27700 <- leafletCRS(
+#   crsClass = "L.Proj.CRS",
+#   code = "EPSG:27700",
+#   proj4def = "+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +units=m +no_defs",
+#   resolutions = 2^(16:7))
+# leaflet(options = leafletOptions(crs = epsg27700)) %>%
+#   addPolygons(data = flow_lines)
+flowlines_wgs <- flow_lines %>% sf::st_transform('+proj=longlat +datum=WGS84')
+leaflet() %>%
+  addTiles() %>%
+  addPolygons(data = flowlines_wgs)
+
+# another simple plot option:
+copy_flow <- flow_lines
+copy_flow$value <- as.numeric(as.character(copy_flow$value))
+tmap_mode("view")
+qtm(copy_flow, lines.lwd = "value", scale = 6)
+
+
+# Trying more with leaflet
+# https://cran.r-project.org/web/packages/stplanr/vignettes/stplanr-od.htmlhttps://cran.r-project.org/web/packages/stplanr/vignettes/stplanr-od.htmlhttps://cran.r-project.org/web/packages/stplanr/vignettes/stplanr-od.html
+lwd <- copy_flow$value / mean(copy_flow$value) / 10
+copy_flow$percent <- 100 - copy_flow$value / max(copy_flow$value) * 100
+plot(copy_flow["percent"], lwd = lwd, breaks = c(0, 50, 70, 80, 90, 95, 100))
+
+
 
