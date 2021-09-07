@@ -3,10 +3,6 @@
 # Created by: azanchetta
 # Created on: 19/08/2021
 
-# Using as reference the instructions for R that one can find here:
-# https://rpubs.com/adam_dennett/257231
-# https://rpubs.com/adam_dennett/259068
-
 
 # *Load libraries ----
 #  Necessary packages, install if needed
@@ -32,8 +28,7 @@ library(raster)
 
 #  From previous scripts:
 # library(dplyr) # for R piping and more cool stuff
-# library(readxl) # for handling Excel spreasheets
-# 
+# library(readxl) # for handling Excel spreadsheets
 # library(foreign) # for handling databases (dbf)
 # # for handling geospatial data
 # library(sf)
@@ -78,7 +73,7 @@ summary(destination_shp)
 
 # cdata <- read.csv("https://www.dropbox.com/s/7c1fi1txbvhdqby/LondonCommuting2001.csv?raw=1")
 # --
-beta <- 0.34 # https://eprints.whiterose.ac.uk/134554/1/Wadington%20et%20al_Accounting%20for%20Temporal%20Demand.pdf
+beta <- 0.34 # Souce: https://eprints.whiterose.ac.uk/134554/1/Wadington%20et%20al_Accounting%20for%20Temporal%20Demand.pdf
 #--
 attractiveness <- as.integer(destination_shp@data$Rank)
 # --
@@ -87,23 +82,26 @@ students_per_lsoa <- as.integer(origin_shp@data$STUD_TOT)
 # *Calculations* ----
 # A. Generate necessary variables ----
 
-# Distance matrix:
+## Distance matrix: ###
+# It is a i*j matrix with:
+# i (origins) rows
+# j (destinations) columns
 origin_coords <- origin_shp@data[,c("X_COORD", "Y_COORD")]
 destination_coords <- destination_shp@data[,c("x_coord","y_coord")]
 # distance_matrix <- "" # sqrt[(xi - xj)^2 + (yi - yj)^2]/1000 .... find automatic way in R?
-
+# matrix generation using (x,y) coordinates from the data:
 dist_matrix <- round(pointDistance(origin_coords,
-              destination_coords,
-              lonlat = F) # with EPSG:27700 we don't have lat lon
-              / 1000, #(to convert to km)
-              1) # rounding to 1 decimal place
+                                   destination_coords,
+                                   lonlat = F) # with EPSG:27700 we don't have lat lon
+                     / 1000, #(to convert to km)
+                     1) # rounding to 1 decimal place
 
-# Balance factor array:
+## Balance factor array ###
 # formula: balf = 1/ sum[attractiveness * exp(-beta * dist))]
 expon <- exp(-beta * dist_matrix) # exp(-beta * dist)
 balancefactor_array <- 1/ (expon %*% attractiveness)
 
-# checking results!!
+# manually checking results!! 
 # expon[1,]
 # cc <- expon[1,]*attractiveness
 # dd <- expon[1,1]*attractiveness[1]
@@ -118,18 +116,21 @@ balancefactor_array <- 1/ (expon %*% attractiveness)
 
 # B. Flows matrix ----
 # flows_matrix = students * attractiveness * balf * exp(-beta * dist)
-# start <- students_per_lsoa %*%attractiveness  # doesn't work
-# ttrying to generate a df or matrix that has repeated rows, to multiply them for the same column n-times
+# start <- students_per_lsoa %*% attractiveness  # doesn't work
+# trying to generate a df or matrix that has repeated rows, to multiply them for the same column n-times
 # try <- matrix(attractiveness,
 #               nrow = length(students_per_lsoa),
 #               ncol = length(attractiveness))
 # try2 <- apply(try,1, function(x) x*attractiveness)
-try <- data.frame(matrix(NA, nrow = 1, ncol = length(attractiveness)))
-try[1,] <- attractiveness # dataframe with as row the attractiveness
+try <- data.frame(matrix(NA,
+                         nrow = 1,
+                         ncol = length(attractiveness)))
+try[1,] <- attractiveness # dataframe with as one row the attractiveness
 nrows <- length(students_per_lsoa)
-try2 <- try[rep(seq_len(nrow(try)), each = nrows), ] # dataframe with the attractiveness road repeated n*stud times
+try2 <- try[rep(seq_len(nrow(try)),
+                each = nrows), ] # dataframe with the attractiveness road repeated n*stud times
 
-try3 <- adply(try2, 1, function(x) x * students_per_lsoa) # function from package plyr  # # actual multiplication
+try3 <- adply(try2, 1, function(x) x * students_per_lsoa) # function from package plyr  ## actual multiplication
 product <- try3
 
 try4 <- product * expon
@@ -138,7 +139,11 @@ summary(flows_matrix)
 colnames(flows_matrix) <- destination_shp@data$RC_ID
 rownames(flows_matrix) <- origin_shp@data$LSOA11CD
 flows_matrix <- format(flows_matrix, digits = 2)
+
 # C. Plots?? ----
+# Note: decided to use Qgis for mapping as it is more functional
+# the lines below provide some trials in R and the process to create the shp used in Qgis
+
 # Converting flows matrix to long format to be able to plot it as flows
 for_long_format <- flows_matrix
 for_long_format$lsoa_id <- origin_shp@data$LSOA11CD
@@ -169,22 +174,26 @@ library(sf)
 origin_dt <- data.table(
   ID=origin_shp@data$LSOA11CD,
   lon=origin_shp@data$X_COORD,
-  lat=origin_shp@data$Y_COORD
-)
-origin_sf = st_as_sf(origin_dt, coords = c("lon", "lat"), 
-                 crs = 27700, agr = "constant")
+  lat=origin_shp@data$Y_COORD)
+origin_sf = st_as_sf(origin_dt,
+                     coords = c("lon","lat"),
+                     crs = 27700,
+                     agr = "constant")
 plot(origin_sf)
 
 destination_dt <- data.table(
   ID=destination_shp@data$RC_ID,
   lon=destination_shp@data$x_coord,
-  lat=destination_shp@data$y_coord
-)
-destination_sf = st_as_sf(destination_dt, coords = c("lon", "lat"), 
-                     crs = 27700, agr = "constant")
+  lat=destination_shp@data$y_coord)
+destination_sf = st_as_sf(destination_dt,
+                          coords = c("lon", "lat"),
+                          crs = 27700,
+                          agr = "constant")
 plot(destination_sf)
 
-flow_lines <- od2line(flows_long, origin_sf, destinations = destination_sf)
+flow_lines <- od2line(flows_long,
+                      origin_sf,
+                      destinations = destination_sf)
 plot(flow_lines)  # it plots the 3 graphs...
 
 # Convert sf object to sp object in order to export it as shp
@@ -198,7 +207,7 @@ flowlines_sp@data$value <- as.integer(flowlines_sp@data$value) # adding this lin
 writeOGR(obj = flowlines_sp,
          dsn = data_path,
          layer = "flow_lines",
-         driver = "ESRI Shapefile") # exporting shp
+         driver = "ESRI Shapefile") # exporting shp
 
 # trying to plot in leaflet
 library(leaflet)
@@ -233,3 +242,10 @@ plot(copy_flow["percent"], lwd = lwd, breaks = c(0, 50, 70, 80, 90, 95, 100))
 
 
 
+# Notes  -----
+# Tries to use as reference the instructions for R that one can find here:
+# https://rpubs.com/adam_dennett/257231
+# https://rpubs.com/adam_dennett/259068
+# Actually used the formulas from Khawaldah et al 2012
+# Lovelace instructions on "A demand-constrained spatial interaction model in R":
+# https://rpubs.com/RobinLovelace/11685
