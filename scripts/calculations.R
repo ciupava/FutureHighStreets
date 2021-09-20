@@ -1,3 +1,14 @@
+# Title     : calculations.R
+# Objective : Analyse land use data for UK high streets
+# Created by: azanchetta
+# Created on: 07/2021
+# Note: This branch is currently dismissed, as we don't have the most detailed 
+#       data for the high streets landuse, instead we only have the aggregated 
+#       data.
+#       The analysis below generates some sort of extra classification, which we
+#       have tried to plot to infer information on the data, without much
+#       success.
+
 # Libraries install
 library(dplyr) # for R piping and more cool stuff
 library(readxl) # for handling Excel spreasheets

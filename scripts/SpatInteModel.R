@@ -2,14 +2,10 @@
 # Objective : Build a spatial interaction model to analyse the high streets population patterns in UK
 # Created by: azanchetta
 # Created on: 19/08/2021
+# Note: first attempt to generate the SIM on data from Leeds LAD
 
 
 # *Load libraries ----
-#  Necessary packages, install if needed
-# install.packages(c("sp", "MASS", "reshape2","geojsonio","rgdal","downloader","maptools","dplyr","broom"
-#                    ,"stplanr", "ggplot2", "leaflet"))
-
-#  From source:
 library(tidyverse)
 library(plyr)
 library(sp)
@@ -31,8 +27,9 @@ library(raster)
 # A. Paths definition ----
 # getwd()
 # list.files(getwd())
-# data_path <- "/Users/azanchetta/OneDrive - The Alan Turing Institute/Research/projects/FutureHighStreets/data/Leeds_data"
-data_path <- "/Users/azanchetta/OneDrive - The Alan Turing Institute/Research/Data/FutureCityCentres/Leeds"
+# data_path <- "/Users/azanchetta/OneDrive - The Alan Turing Institute/Research/projects/FutureHighStreets/data/Leeds_data" # folder connected to the GitHub repo, where only relevant data is moved to (IE the data that is shared online)
+data_path <- "/Users/azanchetta/OneDrive - The Alan Turing Institute/Research/Data/FutureCityCentres/Leeds" # original data folder (richer)
+
 
 # B. Variables definition ----
 origin_data_filename <- "LSOAS_pop-weighted-centroids_with-students_Leeds"
@@ -237,3 +234,7 @@ plot(copy_flow["percent"], lwd = lwd, breaks = c(0, 50, 70, 80, 90, 95, 100))
 # Actually used the formulas from Khawaldah et al 2012
 # Lovelace instructions on "A demand-constrained spatial interaction model in R":
 # https://rpubs.com/RobinLovelace/11685
+
+#  Necessary packages, install if needed
+# install.packages(c("sp", "MASS", "reshape2","geojsonio","rgdal","downloader","maptools","dplyr","broom"
+#                    ,"stplanr", "ggplot2", "leaflet"))
