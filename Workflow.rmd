@@ -1,9 +1,35 @@
 ---
-title: "R Notebook"
-author: azanchetta
+title: "Workflow to create a SIM of population to retails flow in UK high streets"
+author: azanchetta@turing.ac.uk
 date: 20/09/2021
-output: html_document
+output: rmarkdown::github_document
 ---
+
+Bibliography:
+Lovelace, R., Birkin, M., Cross, P., Clarke, M. (2016). ‘From Big Noise to Big Data: Toward the Verification of Large Data sets for Understanding Regional Retail Flows’, Geographical Analysis 48, 59–81
+
+Wilson, A.G. (1971). ‘A Family of Spatial Interaction Models, and Associated Developments’. Environment and Planning, 3, 1-32
+
+CDRC (2021). Retail centre boundaries. Available at: https://data.cdrc.ac.uk/dataset/retail-centre-boundaries.
+
+Data:
+UK Office for National Statistics (ONS): the demographic data (population characteristics, occupation) at LSOA levels from the Census 2011 data and the geographic data from the Open Geography portal.
+The list of UK retail centres, with their boundaries, is provided by the University of Liverpool and is available at CDRC (2021).
+
+
+Open questions:
+-	At which level to run the analysis: national scale or regional/LAD
+-	Dimension of attractiveness values
+-	Calibration of the model
+
+Workflow:
+-	Generate centroids for the population (origins) and the retail centres (destinations)
+-	Generate the origin-destination matrix and the other variables necessary to run the model
+-	Run the model on the student population, then perform calibration
+-	Run the model on different scenarios for different groups of individuals and perform analysis of the results
+
+
+
 
 The [R plugin](https://www.jetbrains.com/help/pycharm/r-plugin-support.html) for IntelliJ-based IDEs provides
 handy capabilities to work with the [R Markdown](https://www.jetbrains.com/help/pycharm/r-markdown.html) files.
