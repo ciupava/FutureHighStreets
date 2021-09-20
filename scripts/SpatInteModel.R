@@ -14,38 +14,18 @@ library(tidyverse)
 library(plyr)
 library(sp)
 library(MASS)
-library(reshape2)
+library(reshape2) # to change long/wide format in database
 # library(geojsonio) # not managing to install it
 library(rgdal)
 library(downloader)
 library(maptools)
-library(broom) 
+library(broom) # function tidy for shapefile
 library(stplanr)
 library(leaflet)
 library(sf)
 library(tmap)
 library(raster)
 
-#  From previous scripts:
-# library(dplyr) # for R piping and more cool stuff
-# library(readxl) # for handling Excel spreadsheets
-# library(foreign) # for handling databases (dbf)
-# # for handling geospatial data
-# library(sf)
-# library(maps) # actually used?
-# library(mapdata)
-# library(maptools)
-# library(rgdal)
-# library(ggmap)
-# library(rgeos)
-# library(broom)  # function tidy for shapefile
-# library(ggplot2) # graphs
-# library(plyr)
-# library(tidyverse)
-# library(tidyr)
-# library(reshape2) # to change long/wide format in database
-# library(GGally) # to make nice scatter plots
-# library(cluster) # for cluster analysis
 
 ### *Data import* ----
 # A. Paths definition ----
@@ -139,6 +119,14 @@ summary(flows_matrix)
 colnames(flows_matrix) <- destination_shp@data$RC_ID
 rownames(flows_matrix) <- origin_shp@data$LSOA11CD
 flows_matrix <- format(flows_matrix, digits = 2)
+
+
+
+# Checking input and output flows
+flows_matrix_numerical <- lapply(flows_matrix, as.numeric)
+tot_col <- mapply(sum,flows_matrix_numerical) #colSums(flows_matrix_numerical)
+
+
 
 # C. Plots?? ----
 # Note: decided to use Qgis for mapping as it is more functional
