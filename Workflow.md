@@ -1,18 +1,18 @@
 ---
 # Workflow to create a SIM of individuals to retails flow in UK high streets
+---
 *author:* azanchetta@turing.ac.uk
 
 *date:* 20/09/2021
 
 ---
-
 *Bibliography:*
 
 Lovelace, R., Birkin, M., Cross, P., Clarke, M. (2016). ‘From Big Noise to Big Data: Toward the Verification of Large Data sets for Understanding Regional Retail Flows’, Geographical Analysis 48, 59–81
 
 Wilson, A.G. (1971). ‘A Family of Spatial Interaction Models, and Associated Developments’. Environment and Planning, 3, 1-32
 
----
+
 
 ### Data:
 UK Office for National Statistics (ONS):
@@ -23,8 +23,8 @@ UK Office for National Statistics (ONS):
 Data | Use | Resolution | format | comments | link to source
 ---- | --- | ---------- | ------ | -------- | --- 
 Demographic data | No. residents | LSOAs | csv | table KS101EW - Usual resident population | [Census 2011](https://www.nomisweb.co.uk/query/select/getdatasetbytheme.asp?theme=75&subgrp=Key+Statistics)
-- | No. students | - | - | Table QS601EW - Economic activity, Students | -
-- | No. employed per industry | - | - | Table QS605EW - Industry | - 
+"" | No. students | - | - | Table QS601EW - Economic activity, Students | -
+"" | No. employed per industry | - | - | Table QS605EW - Industry | - 
 Geospatial data | calculate distances | LSOAs (centroids) | shp (points) | Population weighted centroids | [ONS geoportal](https://geoportal.statistics.gov.uk/datasets/lower-layer-super-output-areas-december-2011-population-weighted-centroids/explore)
 Retail centres boundaries | calculate distances | retail areas | shp (polygons) | centroids calculated in Qgis | [CDRC](https://data.cdrc.ac.uk/dataset/retail-centre-boundaries)
 
