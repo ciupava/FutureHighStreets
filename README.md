@@ -7,5 +7,5 @@
 **Note:**
 This project requires a specific conda environment, that can be created using the provided environment file.
 
-`$ conda env create -f environment.yml`
+`$ conda env create -f env.yml`
 
