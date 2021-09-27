@@ -12,6 +12,7 @@ Lovelace, R., Birkin, M., Cross, P., Clarke, M. (2016). ‘From Big Noise to Big
 
 Wilson, A.G. (1971). ‘A Family of Spatial Interaction Models, and Associated Developments’. Environment and Planning, 3, 1-32
 
+Waddington T., Clarke G., Clarke M.C.et al. (2019).‘Accounting for temporal demand variations in retail location models’,Geographical Analysis, 51(4), 426-447
 
 
 ### Data:
@@ -28,10 +29,10 @@ Demographic data | No. residents | LSOAs | csv | table KS101EW - Usual resident 
 Geospatial data | calculate distances | LSOAs (centroids) | shp (points) | Population weighted centroids | [ONS geoportal](https://geoportal.statistics.gov.uk/datasets/lower-layer-super-output-areas-december-2011-population-weighted-centroids/explore)
 Retail centres boundaries | calculate distances | retail areas | shp (polygons) | centroids calculated in Qgis | [CDRC](https://data.cdrc.ac.uk/dataset/retail-centre-boundaries)
 
-### Open questions:
-- At which level to run the analysis: national scale or regional/LAD
-- Dimension of attractiveness values
-- Calibration of the model
+### Open questions: *Updated at 22/09/2021 after chat with Mark*
+- [X] At which level to run the analysis: national scale or regional/LAD --> LAD
+- [X] Dimension of attractiveness values --> we temporarily use fixed value for Alpha = 1
+- [X] Calibration of the model --> we temporarily use fixed value for Beta = 1 (Waddington et al. 2019)
 
 ### Workflow:
 
@@ -41,9 +42,9 @@ Retail centres boundaries | calculate distances | retail areas | shp (polygons) 
     * Import shps in QGIS
     * Generate centroids for the retail centres (destinations)
     * Join students table to the LSOAs centroids shp (some data tudy up must be needed, as titles are present in the spreadsheet)
-    * Export shp as csv file to be used in *R* (necessary? we actually need the shp in order to calcularte the distances origins and destination IE the OD matrix)
+    * Export shp as csv file to be used in *R* (necessary? we actually need the shp in order to calculate the distances origins and destination IE the OD matrix)
 * R
-    * open SpaInteModel.R
+    * open SpatInteModel.R
     * follow the steps:
         * import the csv tables and shp
         * obtain the coordinates of O and D both from the shp
@@ -55,14 +56,19 @@ Retail centres boundaries | calculate distances | retail areas | shp (polygons) 
 - Run the model on different scenarios for different groups of individuals and perform analysis of the results
 
 #### Improved workflow
-* Reproduce in Python?
-* Automate the process of centroids creation in R/Python - or - one single time process in QGIS?
-* resize the attractiveness
-* depending on scale, understand how to access the data (national/ conties / ...?)
-* find data for calibration
-* understand if calibration is needed IE maybe use radiation models?
-* 
-*
+List of things to be done in order of priority:
+- [X] Reproduce in Python? --> YES
+- [ ] Automate the process of centroids creation in R/Python - or - one single time process in QGIS? --> report code
+- [ ] depending on scale, understand how to access the data (national/ counties / ...?) --> generate LUT for accessing the data sources (retail centres AND the pop weighted LSOA centroids)
+- [ ] resize the attractiveness
+- [ ] find data for calibration ... only when actually we want to run the calibration
+- [ ] understand if calibration is needed IE maybe use radiation models?
+
+Current state of the model (in Python ):
+* Build LUT for selecting a specific LAD from data sources
+* Select data from the sources depending on the LAD of interest
+
+
 
 
 --------------
