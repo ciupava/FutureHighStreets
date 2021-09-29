@@ -58,7 +58,7 @@ Retail centres boundaries | calculate distances | retail areas | shp (polygons) 
 #### Improved workflow
 List of things to be done in order of priority:
 - [X] Reproduce in Python? --> YES
-- [ ] Automate the process of centroids creation in R/Python - or - one single time process in QGIS? --> report code
+- [ ] Automate the process of centroids creation in R/Python - or - one single time process in QGIS? --> share code
 - [ ] depending on scale, understand how to access the data (national/ counties / ...?) --> generate LUT for accessing the data sources (retail centres AND the pop weighted LSOA centroids)
 - [ ] resize the attractiveness
 - [ ] find data for calibration ... only when actually we want to run the calibration
