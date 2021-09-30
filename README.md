@@ -11,7 +11,7 @@ For instructions on the process (structure, data sources, model, etc) check out 
 
 For a more general description of the process (purpose, objectives, steps, literature, etc) check out the internal document in OneDrive (shared_EcoTwins/Individual_projects/Future_high_streets).
 
-For documents/presentation of temporary results check the conferences folder in OneDrive ((shared_EcoTwins/Conferences-seminars, monthly see: UA meeting presentation, ECTQG submitted paper) and the Overleaf project (EcoTwins/HighStreets/Paper.tex).
+For documents/presentation of temporary results check the conferences folder in OneDrive (shared_EcoTwins/Conferences-seminars, see: monthly UA meeting presentation, ECTQG submitted paper) and the Overleaf project (EcoTwins/HighStreets/Paper.tex).
 
 
 **Note:**
