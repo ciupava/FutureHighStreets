@@ -31,8 +31,8 @@ Retail centres boundaries | calculate distances | retail areas | shp (polygons) 
 
 ### Open questions: *Updated at 22/09/2021 after chat with Mark*
 - [X] At which level to run the analysis: national scale or regional/LAD --> LAD
-- [X] Dimension of attractiveness values --> we temporarily use fixed value for Alpha = 1
-- [X] Calibration of the model --> we temporarily use fixed value for Beta = 1 (Waddington et al. 2019)
+- [X] Dimension of attractiveness values --> for the attractiveness array we have used for Leeds a temporary 'rank' from 1 to 10 depending on the type of retail centre (see LUT), this shall be combined with the centre's size, as discussed in the internal document on OneDrive
+- [X] Calibration of the model --> we we use (for the moment?) a fixed value for Alpha = 1 and Beta = 0.43 (Waddington et al. 2019)
 
 ### Workflow:
 
@@ -40,9 +40,10 @@ Retail centres boundaries | calculate distances | retail areas | shp (polygons) 
 (Working, but to be improved and automated)
 * Qgis
     * Import shps in QGIS
+    * Generate the 'rank' field in the retail shp by joining the relative column of the table RetailCentres_LUT (this is our retail's attractiveness), see table in `data/Leeds_data/RetailCentres_LUT.csv`
     * Generate centroids for the retail centres (destinations)
-    * Join students table to the LSOAs centroids shp (some data tudy up must be needed, as titles are present in the spreadsheet)
-    * Export shp as csv file to be used in *R* (necessary? we actually need the shp in order to calculate the distances origins and destination IE the OD matrix)
+    * Join students table to the LSOAs centroids shp (some data tidy up is needed, as titles are present in the spreadsheet)
+    * Export shapefile's attribute tale as csv file to be used in *R* (necessary? we actually need the shp in order to calculate the distances origins and destination IE the OD matrix)
 * R
     * open SpatInteModel.R
     * follow the steps:
@@ -72,21 +73,3 @@ Current state of the model (in Python ):
 
 
 --------------
-
-The [R plugin](https://www.jetbrains.com/help/pycharm/r-plugin-support.html) for IntelliJ-based IDEs provides
-handy capabilities to work with the [R Markdown](https://www.jetbrains.com/help/pycharm/r-markdown.html) files.
-To [add](https://www.jetbrains.com/help/pycharm/r-markdown.html#add-code-chunk) a new R chunk,
-position the caret at any line or the code chunk, then click "+".
-
-The code chunk appears:
-```{r}
-```
-
-Type any R code in the chunk, for example:
-```{r}
-mycars <- within(mtcars, { cyl <- ordered(cyl) })
-mycars
-```
-
-Now, click the **Run** button on the chunk toolbar to [execute](https://www.jetbrains.com/help/pycharm/r-markdown.html#run-r-code) the chunk code. The result should be placed under the chunk.
-Click the **Knit and Open Document** to built and preview an output.
