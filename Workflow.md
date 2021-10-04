@@ -40,12 +40,12 @@ Retail centres boundaries | calculate distances | retail areas | shp (polygons) 
 (Working, but to be improved and automated)
 * Qgis
     * Import shps in QGIS
-    * Generate the 'rank' field in the retail shp by joining the relative column of the table RetailCentres_LUT (this is our retail's attractiveness), see table in `data/Leeds_data/RetailCentres_LUT.csv`
+    * Generate the 'rank' field in the retail shp by joining the relative column of the table RetailCentres_LUT (this is our retail's attractiveness), see table in [data/Leeds_data/RetailCentres_LUT.csv]data/Leeds_data/RetailCentres_LUT.csv])
     * Generate centroids for the retail centres (destinations)
     * Join students table to the LSOAs centroids shp (some data tidy up is needed, as titles are present in the spreadsheet)
     * Export shapefile's attribute tale as csv file to be used in *R* (necessary? we actually need the shp in order to calculate the distances origins and destination IE the OD matrix)
 * R
-    * open SpatInteModel.R
+    * open [SpatInteModel.R](scripts/SpatInteModel.R)
     * follow the steps:
         * import the csv tables and shp
         * obtain the coordinates of O and D both from the shp
@@ -59,7 +59,7 @@ Retail centres boundaries | calculate distances | retail areas | shp (polygons) 
 #### Improved workflow
 List of things to be done in order of priority:
 - [X] Reproduce in Python? --> YES
-- [ ] Automate the process of centroids creation in R/Python - or - one single time process in QGIS? --> share code
+- [ ] Automate the process of centroids creation in R/Python - or - one single time process in QGIS? --> upload code online  ... see file [data_handling.ipynb](scripts/data_handling.ipynb)
 - [ ] depending on scale, understand how to access the data (national/ counties / ...?) --> generate LUT for accessing the data sources (retail centres AND the pop weighted LSOA centroids)
 - [ ] resize the attractiveness
 - [ ] find data for calibration ... only when actually we want to run the calibration
