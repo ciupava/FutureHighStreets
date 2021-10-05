@@ -12,7 +12,10 @@ Lovelace, R., Birkin, M., Cross, P., Clarke, M. (2016). ‘From Big Noise to Big
 
 Wilson, A.G. (1971). ‘A Family of Spatial Interaction Models, and Associated Developments’. Environment and Planning, 3, 1-32
 
-Waddington T., Clarke G., Clarke M.C.et al. (2019).‘Accounting for temporal demand variations in retail location models’,Geographical Analysis, 51(4), 426-447
+Waddington T., Clarke G., Clarke M.C. et al. (2019). ‘Accounting for temporal demand variations in retail location models’, Geographical Analysis, 51(4), 426-447
+
+Khawaldah H., Birkin M. and Clarke G. (2012), 'A review of two alternative retail impact assessment techniques: the caseo f Silverburn in Scotland', The Town Planning Review, 83(2), 233–260
+url:http://www.jstor.org/stable/41349096
 
 
 ### Data:
@@ -53,21 +56,21 @@ Retail centres boundaries | calculate distances | retail areas | shp (polygons) 
         * calculate other arrays (vectors) for the model: balance factor, population, attractiveness
         * calculate the flows matrix
     * export back to plot in Qgis
-- Run the model on the student population, then perform calibration
-- Run the model on different scenarios for different groups of individuals and perform analysis of the results
+- (Not performed) Run the model on the student population, then perform calibration
+- (Not performed) Run the model on different scenarios for different groups of individuals and perform analysis of the results
 
 #### Improved workflow
 List of things to be done in order of priority:
 - [X] Reproduce in Python? --> YES
-- [ ] Automate the process of centroids creation in R/Python - or - one single time process in QGIS? --> upload code online  ... see file [data_handling.ipynb](scripts/data_handling.ipynb)
-- [ ] depending on scale, understand how to access the data (national/ counties / ...?) --> generate LUT for accessing the data sources (retail centres AND the pop weighted LSOA centroids)
-- [ ] resize the attractiveness
-- [ ] find data for calibration ... only when actually we want to run the calibration
+- [X] Automate the process of centroids creation in R/Python - or - one single time process in QGIS? --> upload code online 
+- [ ] attractiveness: generate values depending on type and size of retail centres
+- [ ] depending on scale, understand how to access the data (national/ counties / ...?) --> generate LUT for accessing the data sources at LAD level by LSOAs list (both for retail centres AND the pop weighted LSOA centroids?)
+- [ ] find data for calibration ... only when we actually want to run the calibration
 - [ ] understand if calibration is needed IE maybe use radiation models?
 
 Current state of the model (in Python ):
-* Build LUT for selecting a specific LAD from data sources
-* Select data from the sources depending on the LAD of interest
+* generated Jupyter notebooks for the SIM analysis and for the data processing -> [SpatInteModel.ipynb](scripts/SpatInteModel.ipynb)
+* started the data processing -> see file [data_handling.ipynb](scripts/data_handling.ipynb)
 
 
 
